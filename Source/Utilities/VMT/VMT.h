@@ -50,7 +50,7 @@ public:
   };
 
   template <typename Fn = void*> inline const Fn GetOriginalFunction(std::size_t strFunctionIndex) { // Grab the original function using its index from the baseclass.
-    return reinterpret_cast<Fn>(this->m_ppiBaseClass[strFunctionIndex]);
+    return reinterpret_cast<Fn>(this->m_piOriginalVFT[strFunctionIndex]);
   }
 
   inline bool HookFunction(void* pNewFunction, const std::size_t strFunctionIndex);

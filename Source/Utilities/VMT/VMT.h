@@ -53,7 +53,7 @@ public:
     return reinterpret_cast<Fn>(this->m_piOriginalVFT[strFunctionIndex]);
   }
 
-  inline bool CVMT::HookFunction(void* pNewFunction, const std::size_t strFunctionIndex) {
+  inline bool HookFunction(void* pNewFunction, const std::size_t strFunctionIndex) {
 
     if (strFunctionIndex > this->m_strTotalFunctions) // Make sure you're not calling a function that doesn't exist. :P
       return false;
@@ -64,7 +64,7 @@ public:
 
   }
 
-  inline bool CVMT::UnhookFunction(const std::size_t strFunctionIndex) {
+  inline bool UnhookFunction(const std::size_t strFunctionIndex) {
 
     if (strFunctionIndex > this->m_strTotalFunctions) // Make sure you're not calling a function that doesn't exist.
       return false;
@@ -75,7 +75,7 @@ public:
 
   }
 
-  inline std::size_t CVMT::GetTotalFunctions() {
+  inline std::size_t GetTotalFunctions() {
     return this->m_strTotalFunctions;
   }
 
